@@ -32,7 +32,6 @@ img {
 
 */
 .btn {
-
     display: inline-block;
     background-color: black;
     padding: 15px 5px;
@@ -94,6 +93,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    flex-wrap: wrap;
     
 }
 
@@ -156,7 +156,7 @@ header {
     }
 }
 
-/*Adjustment for collumns to only stop when they are finished */
+/*Adjustment for navigation */
 @media (max-width: 706px) { 
     header {
         flex-direction: column;
@@ -215,7 +215,7 @@ nav a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    background-color:darkblue;
+    background-color:rgb(0, 113, 139);
     color: white;
     margin-top: 20px;
    

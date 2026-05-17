@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example page</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+
+    <style>
+        body {
+            font-family: 'Cascadia Code', monospace;
+        }
+        input {
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 2px solid rgb(82, 81, 81);
+            border-radius: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #reset {
+            background-color: red;
+            width: 20vw;
+            height: 10vh;
+            font-size: 20px;
+            flex-basis: auto;
+            transition: all 0.3s ease;
+            transform: scale(1);
+            
+        }
+
+        #reset:hover {
+            background-color: orangered;
+            transition: all 0.3s ease;
+            transform: scale(1.05);
+            
+        }
+
+        .action {
+            background-color: black;
+            color: white;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        #add-btn:hover {
+            background-color: gray;
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <body>
+        <h1>Project for form</h1>
+        <p>This is an example page to test my skills on javascript to make a form</p>
+
+        <!--form-->
+
+        <form action="#" method="POST">
+            <input id="value1" type="number" value="0" required placeholder="value 1">
+            <br> 
+            <input id="value2" type="number" value="0" required placeholder="value 2">
+            <br>
+            <input id="result" type="number" value="0" placeholder="result" disabled>
+            <br>
+
+            <button id="add-btn" class="action" onclick="addValues()" type="button">Add 2 numbers</button>
+            <button id="add-btn" class="action" onclick="minusValues()" type="button">subtract 2 numbers</button>
+            <button id="add-btn" class="action" onclick="mulitplyValues()" type="button">Multiply 2 numbers</button>
+            <button id="add-btn" class="action" onclick="divideValues()" type="button">Divide 2 numbers</button>
+            <br>
+            <button id="reset" type="reset">Clear All</button>
+        </form>
+
+        <script>
+            function addValues() {
+                let input1 = document.getElementById("value1");
+                let input2 = document.getElementById("value2");
+                let result = document.getElementById("result");
+
+                let resultVal = Number(input1.value) + Number(input2.value);
+                result.value = resultVal;
+
+                console.log(resultVal)
+            }
+
+            function minusValues() {
+                let input1 = document.getElementById("value1");
+                let input2 = document.getElementById("value2");
+                let result = document.getElementById("result");
+
+                let resultVal = parseInt(input1.value) - parseInt(input2.value);
+                result.value = resultVal;
+
+                console.log(resultVal)
+            }
+
+            function mulitplyValues() {
+                let input1 = document.getElementById("value1");
+                let input2 = document.getElementById("value2");
+                let result = document.getElementById("result");
+
+                let resultVal = parseInt(input1.value) * parseInt(input2.value);
+                result.value = resultVal;
+
+                console.log(resultVal)
+            }
+
+            function divideValues() {
+                let input1 = document.getElementById("value1");
+                let input2 = document.getElementById("value2");
+                let result = document.getElementById("result");
+
+                let resultVal = parseInt(input1.value) / parseInt(input2.value);
+                result.value = resultVal;
+
+                console.log(resultVal)
+            }
+
+        </script>
+    </body>
+</html>
