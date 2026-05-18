@@ -30,24 +30,36 @@
                 <button class="num-btn btn">.</button>
 
                 <!--Operator buttons-->
-                <button class="opr-btn opr-1 btn">D</button>
+                <button class="opr-btn opr-1 btn" onclick="divideDigits()">÷</button>
                 <button class="opr-btn opr-2 btn" onclick="multiplyDigits()">x</button>
-                <button class="opr-btn opr-3 btn">-</button>
-                <button class="opr-btn opr-4 btn">+</button>
+                <button class="opr-btn opr-3 btn" onclick="minusDigits()">-</button>
+                <button class="opr-btn opr-4 btn" onclick="addDigits()">+</button>
                 <button class="opr-btn opr-5 equal-sign btn">=</button>
 
             </div> <!--end of the button's div-->
         </div><!--end of the calc div-->
 
         <script>
+            let displayEl = document.getElementById("num-display")
+
             function displayDigit(value) {
-
-                let displayEl = document.getElementById("num-display")
                 displayEl.innerText += value;
-
             }
             function eraseDigits() {
-                document.getElementById("num-display").textContent = ""
+                displayEl.textContent = "";
+            }
+
+            function multiplyDigits() {
+                displayEl.innerText += "x";
+            }
+            function minusDigits() {
+                displayEl.innerText += "-";
+            }
+            function addDigits() {
+                displayEl.innerText += "+";
+            }
+            function divideDigits() {
+                displayEl.innerText += "÷";
             }
         </script>
     </body>
