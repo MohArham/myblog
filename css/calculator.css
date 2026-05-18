@@ -1,0 +1,145 @@
+.calc {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #fbf8f8;
+    width: auto;
+    height: auto;
+    border: 0.5px solid #d3d2d2;
+    border-radius: 10px;
+    padding-bottom: 15px;
+
+}
+
+/*display*/
+.display {
+    background-color: #d3d2d2;
+    height:120px;
+    width:90%;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#num-display {
+    font-family: cascadia code;
+    font-size: 400%;
+    align-self: flex-end;
+    margin-right: 10px;
+    transition: all ease 500ms;
+}
+/*buttons*/
+.buttons {
+    display: grid;
+    grid-template: 70px 70px 70px 70px/ 70px 70px 70px 70px;
+}
+
+.btn {
+    height: 60px;
+    width: 60px; 
+    border-radius: 10px;
+    /*font: 500 22px/1 Inter;*/
+    font-size: 22px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 250ms;
+    border: none;
+    background-color: #f1eded;
+}
+
+.btn:hover {
+    transform: scale(1.07);
+    transition: all 250ms;
+}
+
+.btn:focus {
+    background-color: lightgray;
+}
+
+.num-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.num-2 {
+    grid-column-start: 2;
+}
+
+.num-3 {
+    grid-column-start: 3;
+}
+
+.num-4 {
+    grid-row-start: 3;
+}
+
+.num-5 {
+    grid-column-start: 2;
+}
+
+.num-7 {
+    grid-row-start: 4;
+}
+
+.num-8 {
+    grid-column-start: 2;
+}
+
+.num-0 {
+    grid-column: span 2;
+    border-radius: 10px;
+    font-size: 22px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 250ms;
+    border: none;
+    margin-right: 10px;
+}
+
+.num-0:hover {
+    transition: all 250ms;
+    transform: scale(1.07);
+}
+
+.num-0:focus {
+    background-color: lightgray;
+}
+
+/*operator buttons*/
+.opr-btn {
+    color: white;
+    background-color: #ff8a3d;
+    font-weight: bold;
+}
+
+.more-opr-btn {
+    background-color: rgb(221, 218, 218);
+    font-weight: bold;
+}
+
+.equal-sign {
+    background-color: black;
+}
+
+.opr-1 {
+    grid-row: 1/ 2;
+    grid-column: 4/ 5;
+}
+
+.opr-2 {
+    grid-row: 2 / 3;
+    grid-column: 4 / 5;
+}
+
+.opr-3 {
+    grid-row: 3 / 3;
+    grid-column: 4 / 5;
+}
+
+.opr-4 {
+    grid-row: 4 /4;
+    grid-column: 4 / 4;
+}

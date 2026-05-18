@@ -1,1 +1,54 @@
-<
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="../css/calculator.css">
+    </head>
+    <body>
+        <div class="calc">
+            <div class="display">
+                <h1 id="num-display"></h1>
+                
+            </div>
+            <div class="buttons">
+                <!--different types of operator symbols-->
+                <button class="more-opr-btn btn" onclick="eraseDigits()">AC</button>
+                <button class="more-opr-btn btn">+/-</button>
+                <button class="more-opr-btn btn">%</button>
+
+                <!--Number buttons-->
+                <button class="num-btn btn num-1" onclick="displayDigit(1)">1</button>
+                <button class="num-btn btn num-2" onclick="displayDigit(2)">2</button>
+                <button class="num-btn btn num-3" onclick="displayDigit(3)">3</button>
+                <button class="num-btn btn num-4" onclick="displayDigit(4)">4</button>
+                <button class="num-btn btn num-5" onclick="displayDigit(5)">5</button>
+                <button class="num-btn btn num-6" onclick="displayDigit(6)">6</button>
+                <button class="num-btn btn num-7" onclick="displayDigit(7)">7</button>
+                <button class="num-btn btn num-8" onclick="displayDigit(8)">8</button>
+                <button class="num-btn btn num-9" onclick="displayDigit(9)">9</button>
+                <button class="num-0" onclick="displayDigit(0)">0</button>
+                <button class="num-btn btn">.</button>
+
+                <!--Operator buttons-->
+                <button class="opr-btn opr-1 btn">D</button>
+                <button class="opr-btn opr-2 btn" onclick="multiplyDigits()">x</button>
+                <button class="opr-btn opr-3 btn">-</button>
+                <button class="opr-btn opr-4 btn">+</button>
+                <button class="opr-btn opr-5 equal-sign btn">=</button>
+
+            </div> <!--end of the button's div-->
+        </div><!--end of the calc div-->
+
+        <script>
+            function displayDigit(value) {
+
+                let displayEl = document.getElementById("num-display")
+                displayEl.innerText += value;
+
+            }
+            function eraseDigits() {
+                document.getElementById("num-display").textContent = ""
+            }
+        </script>
+    </body>
+</html>
