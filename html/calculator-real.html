@@ -34,13 +34,17 @@
                 <button class="opr-btn opr-2 btn" onclick="multiplyDigits()">x</button>
                 <button class="opr-btn opr-3 btn" onclick="minusDigits()">-</button>
                 <button class="opr-btn opr-4 btn" onclick="addDigits()">+</button>
-                <button class="opr-btn opr-5 equal-sign btn">=</button>
+                <button class="opr-btn opr-5 equal-sign btn" onclick="solveEquation()">=</button>
 
             </div> <!--end of the button's div-->
         </div><!--end of the calc div-->
 
         <script>
-            let displayEl = document.getElementById("num-display")
+            let displayEl = document.querySelector("#num-display");
+            let equation = displayEl.textContent;
+            let operator = ["÷","x","-","+"];
+            let firstNum = "need to figure out!";
+            let secondNum = "need to figure out!";
 
             function displayDigit(value) {
                 displayEl.innerText += value;
@@ -60,6 +64,13 @@
             }
             function divideDigits() {
                 displayEl.innerText += "÷";
+            }
+            function solveEquation() {
+                if (condition) {
+                    
+                } else {
+                    
+                }
             }
         </script>
     </body>

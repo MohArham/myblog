@@ -4,11 +4,11 @@
     align-items: center;
     background-color: #fbf8f8;
     width: auto;
-    height: auto;
     border: 0.5px solid #d3d2d2;
     border-radius: 10px;
     padding-bottom: 15px;
-
+    height: auto
+    margin: 0 auto;
 }
 
 /*display*/
@@ -115,6 +115,10 @@
     font-weight: bold;
 }
 
+.opr-btn:focus {
+    background-color: rgb(255, 103, 2);
+}
+
 .more-opr-btn {
     background-color: rgb(221, 218, 218);
     font-weight: bold;
@@ -123,6 +127,11 @@
 .equal-sign {
     background-color: black;
 }
+
+.equal-sign:focus {
+    background-color: black;
+}
+
 
 .opr-1 {
     grid-row: 1/ 2;
