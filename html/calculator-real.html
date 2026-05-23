@@ -41,10 +41,25 @@
 
         <script>
             let displayEl = document.querySelector("#num-display");
+
             let equation = displayEl.textContent;
-            let operator = ["÷","x","-","+"];
-            let firstNum = "need to figure out!";
-            let secondNum = "need to figure out!";
+            function something() {
+                if (equation === "+") {
+                    let addition = true
+                } else if (equation === "-") {
+                    let subtraction = true
+                } else if (equation === "x") {
+                    let multiplication = true
+                } else if (equation === "÷") {
+                    let division = true
+                }
+            }
+            let operator = something();
+            let equationParts = equation.split(operator);
+            let firstNum = equationParts[0];
+            let secondNum = equationParts[1];
+
+            console.log(equationParts)
 
             function displayDigit(value) {
                 displayEl.innerText += value;
@@ -66,7 +81,7 @@
                 displayEl.innerText += "÷";
             }
             function solveEquation() {
-                if (condition) {
+                if (c) {
                     
                 } else {
                     
