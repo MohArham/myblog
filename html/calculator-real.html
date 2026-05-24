@@ -30,62 +30,83 @@
                 <button class="num-btn btn">.</button>
 
                 <!--Operator buttons-->
-                <button class="opr-btn opr-1 btn" onclick="divideDigits()">÷</button>
+                <button class="opr-btn opr-1 black-btns btn" onclick="backSpace()">⌫</button>
                 <button class="opr-btn opr-2 btn" onclick="multiplyDigits()">x</button>
                 <button class="opr-btn opr-3 btn" onclick="minusDigits()">-</button>
                 <button class="opr-btn opr-4 btn" onclick="addDigits()">+</button>
-                <button class="opr-btn opr-5 equal-sign btn" onclick="solveEquation()">=</button>
+                <button class="opr-btn  opr-6 btn" onclick="divideDigits()">÷</button>
+                <button class="opr-btn opr-5 black-btns btn" onclick="solveEquation()">=</button>
 
             </div> <!--end of the button's div-->
         </div><!--end of the calc div-->
 
         <script>
             let displayEl = document.querySelector("#num-display");
+            let justCalculated = false
 
-            let equation = displayEl.textContent;
-            function something() {
-                if (equation === "+") {
-                    let addition = true
-                } else if (equation === "-") {
-                    let subtraction = true
-                } else if (equation === "x") {
-                    let multiplication = true
-                } else if (equation === "÷") {
-                    let division = true
+            function getOperator(equation) {
+                if (equation.includes("+")) {
+                    return "+"
+                } else if (equation.includes("-")) {
+                    return "-"
+                } else if (equation.includes("x")) {
+                    return "x"
+                } else if (equation.includes("÷")) {
+                    return "÷"
                 }
             }
-            let operator = something();
-            let equationParts = equation.split(operator);
-            let firstNum = equationParts[0];
-            let secondNum = equationParts[1];
-
-            console.log(equationParts)
 
             function displayDigit(value) {
+                if (justCalculated) {
+                    eraseDigits()
+                    justCalculated = false
+                }
                 displayEl.innerText += value;
             }
+
             function eraseDigits() {
                 displayEl.textContent = "";
             }
 
-            function multiplyDigits() {
-                displayEl.innerText += "x";
-            }
-            function minusDigits() {
-                displayEl.innerText += "-";
-            }
-            function addDigits() {
-                displayEl.innerText += "+";
-            }
-            function divideDigits() {
-                displayEl.innerText += "÷";
-            }
-            function solveEquation() {
-                if (c) {
-                    
-                } else {
-                    
+            function backSpace() {
+                if (justCalculated) {
+                    eraseDigits();
+                    justCalculated = false;
+                    return;
                 }
+
+                displayEl.innerText = displayEl.innerText.slice(0, -1);
+            }
+            
+            function multiplyDigits() { displayEl.innerText += "x";}
+            function minusDigits() {displayEl.innerText += "-";}
+            function addDigits() {displayEl.innerText += "+";}
+            function divideDigits() {displayEl.innerText += "÷"}
+
+            function solveEquation() {
+
+            let equation = displayEl.textContent;
+            justCalculated = false
+            let operator = getOperator(equation);
+            let equationParts = equation.split(operator);
+            let firstNum = equationParts[0];
+            let secondNum = equationParts[1];
+            let result;
+
+                if (operator === "+") {
+                    result = Number(firstNum) + Number(secondNum);
+                    displayEl.innerText = result
+                } else if (operator === "-") {
+                    result = Number(firstNum) - Number(secondNum);
+                    displayEl.innerText = result
+                } else if (operator === "x") {
+                    result = Number(firstNum) * Number(secondNum);
+                    displayEl.innerText = result
+                } else if (operator === "÷") {
+                    result = Number(firstNum) / Number(secondNum);
+                    displayEl.innerText = result
+                } 
+                justCalculated = true
             }
         </script>
     </body>
