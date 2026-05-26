@@ -1,13 +1,17 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 .calc {
     display: flex;
     flex-direction: column; 
     align-items: center;
     background-color: #fbf8f8;
     width: auto;
-    border: 0.5px solid #d3d2d2;
+    border: 1px solid #d3d2d2;
     border-radius: 10px;
-    padding-bottom: 15px;
-    height: auto
+    height: 100%;
     margin: 0 auto;
 }
 
@@ -34,7 +38,7 @@
 /*buttons*/
 .buttons {
     display: grid;
-    grid-template: 70px 70px 70px 70px/ 70px 70px 70px 70px;
+    grid-template: 70px 70px 70px 70px / 70px 70px 70px 70px ;
 }
 
 .btn {
@@ -124,11 +128,11 @@
     font-weight: bold;
 }
 
-.equal-sign {
+.black-btns {
     background-color: black;
 }
 
-.equal-sign:focus {
+.black-btns:focus {
     background-color: black;
 }
 
@@ -151,4 +155,11 @@
 .opr-4 {
     grid-row: 4 /4;
     grid-column: 4 / 4;
+}
+
+
+
+.opr-5 {
+    width: 270px;
+    margin-top: 15px;
 }
