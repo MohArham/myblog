@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column; 
     align-items: center;
-    overflow: clip;
 }
 
 html, body {
@@ -12,20 +11,18 @@ html, body {
 
 .calc {
     background-color: #fbf8f8;
-    width: auto;
     border: 1px solid #d3d2d2;
     border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
-
-    transform: scale(0.9);
+    padding: 10px;
+    width: 360px;
+    transform: scale(0.95);
 }
 
 /*display*/
 .display {
     background-color: #d3d2d2;
     height:120px;
-    width:100%;
+    width:350px;
     margin-bottom: 15px;
     border-radius: 10px;
     display: flex;
@@ -45,12 +42,13 @@ html, body {
     display: grid;
     grid-template: 70px 70px 70px 70px 70px 70px/ 70px 70px 70px 70px ;
     gap: 10px;
+    margin-left: 25px;
 
 }
 
 .btn {
-    height: 70px;
-    width: 70px ; 
+    height: 100%;
+    width: 100% ; 
     border-radius: 10px;
     /*font: 500 22px/1 Inter;*/
     font-size: 22px;
@@ -59,6 +57,7 @@ html, body {
     transition: all 250ms;
     border: none;
     background-color: #f1eded;
+    align-self: center;
 }
 
 .btn:hover {
