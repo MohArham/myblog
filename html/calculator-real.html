@@ -43,6 +43,8 @@
 
         <script>
             let displayEl = document.querySelector("#num-display");
+            let displayBox = document.querySelector(".display");
+            displayEl.style.fontSize = "64px";
             let justCalculated = false
             let opAfterCalc = false
 
@@ -62,8 +64,9 @@
                 if (justCalculated) {
                     eraseDigits()
                     justCalculated = false
-                } 
+                }
                 displayEl.innerText += value;
+                resizeDigits()
             }
 
             function eraseDigits() {
@@ -116,10 +119,13 @@
                 currentSize = currentSize.replace("px", "")
                 currentSize = Number(currentSize)
 
-                if (displayEl.scrollWidth > displayEl.clientWidth) {
-                    currentSize -= 1
-                    displayel.style.fontSize = currentSize + "px"
+                if (displayEl.scrollWidth > displayBox.clientWidth) {
+                    currentSize -= 5.5
+                    displayEl.style.fontSize = currentSize + "px"
 
+                }
+                if (displayEl.innerText.length < 10) {
+                displayEl.style.fontSize = "64px";
                 }
             }
         </script>
