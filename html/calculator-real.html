@@ -10,6 +10,7 @@
                 <h1 id="num-display"></h1>
                 
             </div>
+
             <div class="buttons">
                 <!--different types of operator symbols-->
                 <button class="more-opr-btn btn" onclick="eraseDigits()">AC</button>
@@ -43,6 +44,7 @@
         <script>
             let displayEl = document.querySelector("#num-display");
             let justCalculated = false
+            let opAfterCalc = false
 
             function getOperator(equation) {
                 if (equation.includes("+")) {
@@ -60,7 +62,7 @@
                 if (justCalculated) {
                     eraseDigits()
                     justCalculated = false
-                }
+                } 
                 displayEl.innerText += value;
             }
 
@@ -73,8 +75,7 @@
                     eraseDigits();
                     justCalculated = false;
                     return;
-                }
-
+                } 
                 displayEl.innerText = displayEl.innerText.slice(0, -1);
             }
             
@@ -106,7 +107,20 @@
                     result = Number(firstNum) / Number(secondNum);
                     displayEl.innerText = result
                 } 
-                justCalculated = true
+
+                 justCalculated = true
+
+            }
+            function resizeDigits() {
+                let currentSize = displayEl.style.fontSize;
+                currentSize = currentSize.replace("px", "")
+                currentSize = Number(currentSize)
+
+                if (displayEl.scrollWidth > displayEl.clientWidth) {
+                    currentSize -= 1
+                    displayel.style.fontSize = currentSize + "px"
+
+                }
             }
         </script>
     </body>
