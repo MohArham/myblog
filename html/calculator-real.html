@@ -80,6 +80,8 @@
                     return;
                 } 
                 displayEl.innerText = displayEl.innerText.slice(0, -1);
+
+                resizeDigits()
             }
             
             function multiplyDigits() { displayEl.innerText += "x";}
@@ -114,18 +116,16 @@
                  justCalculated = true
 
             }
+
             function resizeDigits() {
-                let currentSize = displayEl.style.fontSize;
-                currentSize = currentSize.replace("px", "")
-                currentSize = Number(currentSize)
+                let currentSize = Number(displayEl.style.fontSize.replace("px", ""));
 
                 if (displayEl.scrollWidth > displayBox.clientWidth) {
-                    currentSize -= 5.5
-                    displayEl.style.fontSize = currentSize + "px"
-
+                    displayEl.style.fontSize = (currentSize - 5) + "px";
                 }
-                if (displayEl.innerText.length < 10) {
-                displayEl.style.fontSize = "64px";
+
+                if (displayEl.scrollWidth < displayBox.clientWidth - 50 && currentSize < 64) {
+                    displayEl.style.fontSize = (currentSize + 5) + "px";
                 }
             }
         </script>
