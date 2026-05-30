@@ -4,7 +4,8 @@
         <title>Calculator</title>
         <link rel="stylesheet" href="../css/calculator.css">
     </head>
-    <body>
+    <body>    
+    <button class="Background-changer" onclick="changeBackground()">Wanna change the background color</button>
         <div class="calc">
             <div class="display">
                 <h1 id="num-display"></h1>
@@ -43,6 +44,7 @@
 
         <script>
             let displayEl = document.querySelector("#num-display");
+            let calcEl = document.querySelector(".calc");
             let displayBox = document.querySelector(".display");
             displayEl.style.fontSize = "64px";
             let justCalculated = false
@@ -127,6 +129,14 @@
                 if (displayEl.scrollWidth < displayBox.clientWidth - 50 && currentSize < 64) {
                     displayEl.style.fontSize = (currentSize + 5) + "px";
                 }
+            }
+
+            function changeBackground() {
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                calcEl.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+        
             }
         </script>
     </body>
