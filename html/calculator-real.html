@@ -28,7 +28,7 @@
                 <button class="num-btn btn num-7" onclick="displayDigit(7)">7</button>
                 <button class="num-btn btn num-8" onclick="displayDigit(8)">8</button>
                 <button class="num-btn btn num-9" onclick="displayDigit(9)">9</button>
-                <button class="num-0" onclick="displayDigit(0)">0</button>
+                <button class="num-btn num-0" onclick="displayDigit(0)">0</button>
                 <button class="num-btn btn">.</button>
 
                 <!--Operator buttons-->
@@ -132,12 +132,87 @@
             }
 
             function changeBackground() {
-                let red = Math.floor(Math.random() * 256);
-                let green = Math.floor(Math.random() * 256);
-                let blue = Math.floor(Math.random() * 256);
-                calcEl.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-        
+
+                let numBtns = document.querySelectorAll(".num-btn");
+                let oprBtns = document.querySelectorAll(".opr-btn");
+                let moreOprBtns = document.querySelectorAll(".more-opr-btn");
+                let theme = Math.floor(Math.random() * 3);
+
+                if (theme === 0) {
+                    calcEl.style.boxShadow = "-5px 10px 70px blue";
+                    calcEl.style.backgroundColor = "blue";
+                    displayBox.style.backgroundColor = "rgb(3, 105, 255)";
+                    displayEl.style.color = "darkblue"
+                } else if (theme === 1) {
+                    calcEl.style.boxShadow = "-5px 10px 70px green";
+                    calcEl.style.backgroundColor = "green";
+                    displayBox.style.backgroundColor = "lightgreen";
+                    displayEl.style.color = "darkgreen"
+                } else if (theme === 2) {
+                    calcEl.style.boxShadow = "-5px 10px 70px red";
+                    calcEl.style.backgroundColor = "red";
+                    displayBox.style.backgroundColor = "rgb(252, 102, 85)";
+                    displayEl.style.color = "maroon"
+                }
+
+                // 1. Loop for numBtns (Perfect!)
+                for (let i = 0; i < numBtns.length; i += 1) {
+                    let singleNumBtn = numBtns[i];
+
+                    if (theme === 0) {
+                        singleNumBtn.style.backgroundColor = "rgb(3, 105, 255)";
+                        singleNumBtn.style.fontWeight = "bold";
+                        singleNumBtn.style.color = "white";
+                    } else if (theme === 1) {
+                        singleNumBtn.style.backgroundColor = "lightgreen";
+                        singleNumBtn.style.fontWeight = "bold";
+                        singleNumBtn.style.color = "white";
+                    } else if (theme === 2) {
+                        singleNumBtn.style.backgroundColor = "rgb(252, 102, 85)";
+                        singleNumBtn.style.fontWeight = "bold";
+                        singleNumBtn.style.color = "white";
+                    }
+                }
+
+                // 2. Loop for oprBtns (FIXED variable typos)
+                for (let j = 0; j < oprBtns.length; j++) {
+                    let singleOprBtn = oprBtns[j];
+
+                    if (theme === 0) {
+                        singleOprBtn.style.backgroundColor = "darkblue";
+                        singleOprBtn.style.fontWeight = "bold";
+                        singleOprBtn.style.color = "white";
+                    } else if (theme === 1) {
+                        singleOprBtn.style.backgroundColor = "darkgreen";
+                        singleOprBtn.style.fontWeight = "bold"; // Fixed
+                        singleOprBtn.style.color = "white"; // Fixed
+                    } else if (theme === 2) {
+                        singleOprBtn.style.backgroundColor = "maroon";
+                        singleOprBtn.style.fontWeight = "bold"; // Fixed
+                        singleOprBtn.style.color = "white"; // Fixed
+                    }
+                }
+
+                // 3. Loop for moreOprBtns (FIXED loop limit and variable typos)
+                for (let l = 0; l < moreOprBtns.length; l++) { // Fixed limit to moreOprBtns.length
+                    let singleMoreOprBtn = moreOprBtns[l];
+
+                    if (theme === 0) {
+                        singleMoreOprBtn.style.backgroundColor = "rgb(103, 69, 255)";
+                        singleMoreOprBtn.style.fontWeight = "bold";
+                        singleMoreOprBtn.style.color = "white";
+                    } else if (theme === 1) {
+                        singleMoreOprBtn.style.backgroundColor = "lightgreen";
+                        singleMoreOprBtn.style.fontWeight = "bold"; // Fixed
+                        singleMoreOprBtn.style.color = "white"; // Fixed
+                    } else if (theme === 2) {
+                        singleMoreOprBtn.style.backgroundColor = "rgb(247, 135, 122)";
+                        singleMoreOprBtn.style.fontWeight = "bold"; // Fixed
+                        singleMoreOprBtn.style.color = "white"; // Fixed
+                    }
+                }
             }
+
         </script>
     </body>
 </html>

@@ -15,8 +15,13 @@ html, body {
     border-radius: 10px;
     padding: 10px;
     width: 360px;
-    transform: scale(0.95);
+    transform: scale(0.9);
+    box-shadow:  -5px 10px 70px rgb(164, 159, 159);
+    transition: background-color 500ms;
+    margin-bottom: 200px;
+
 }
+
 
 /*display*/
 .display {
@@ -28,11 +33,11 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-left: 5px;
 }
 
 #num-display {
     font-family: cascadia code;
-    font-size: 400%;
     align-self: flex-end;
     margin-right: 10px;
     transition: all ease 500ms;
@@ -170,4 +175,25 @@ html, body {
 .opr-5 {
     grid-column: span 4;
     width: auto;
+}
+
+/* Additional buttons */
+.Background-changer {
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;       
+    padding: 12px 24px;
+    background: linear-gradient(to right, red, rgb(255, 242, 0), green, blue, indigo, violet);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.Background-changer:hover, 
+.Background-changer:focus {
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
+    outline: none;
 }
