@@ -192,8 +192,24 @@ html, body {
 }
 
 .Background-changer:hover, 
-.Background-changer:focus {
+.Background-changer:focus,
+.darkmode-btn:hover,
+.darkmode-btn:focus {
     transform: translateY(-5px); 
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
     outline: none;
 }
+
+.darkmode-btn {
+     color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;       
+    padding: 12px 24px;
+    background: linear-gradient(to bottom right, black 60%, grey, whitesmoke);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+

@@ -6,6 +6,7 @@
     </head>
     <body>    
     <button class="Background-changer" onclick="changeBackground()">Wanna change the background color</button>
+    <button class="darkmode-btn" onclick="darkMode()">Dark Mode</button>
         <div class="calc">
             <div class="display">
                 <h1 id="num-display"></h1>
@@ -49,6 +50,12 @@
             displayEl.style.fontSize = "64px";
             let justCalculated = false
             let opAfterCalc = false
+            let numBtns = document.querySelectorAll(".num-btn");
+            let oprBtns = document.querySelectorAll(".opr-btn");
+            let moreOprBtns = document.querySelectorAll(".more-opr-btn");
+            let blackBtns = document.querySelectorAll(".black-btns");
+            let bodyEl = document.querySelector("body");
+            let isDark = false
 
             function getOperator(equation) {
                 if (equation.includes("+")) {
@@ -73,6 +80,7 @@
 
             function eraseDigits() {
                 displayEl.textContent = "";
+                displayEl.style.fontSize = "64px";
             }
 
             function backSpace() {
@@ -116,6 +124,7 @@
                 } 
 
                  justCalculated = true
+                 resizeDigits()
 
             }
 
@@ -132,11 +141,7 @@
             }
 
             function changeBackground() {
-
-                let numBtns = document.querySelectorAll(".num-btn");
-                let oprBtns = document.querySelectorAll(".opr-btn");
-                let moreOprBtns = document.querySelectorAll(".more-opr-btn");
-                let theme = Math.floor(Math.random() * 3);
+                let theme = Math.floor(Math.random() * 5);
 
                 if (theme === 0) {
                     calcEl.style.boxShadow = "-5px 10px 70px blue";
@@ -153,66 +158,131 @@
                     calcEl.style.backgroundColor = "red";
                     displayBox.style.backgroundColor = "rgb(252, 102, 85)";
                     displayEl.style.color = "maroon"
+                } else if (theme === 3) {
+                    calcEl.style.boxShadow = "-5px 10px 70px orange"; 
+                    calcEl.style.backgroundColor = "orange";
+                    displayBox.style.backgroundColor = "peachpuff";
+                    displayEl.style.color = "darkorange"
+                } else if (theme === 4) {
+                    calcEl.style.boxShadow = "-5px 10px 70px purple"; 
+                    calcEl.style.backgroundColor = "purple";
+                    displayBox.style.backgroundColor = "#d8b4fe";
+                    displayEl.style.color = "#4c1d95"
                 }
 
-                // 1. Loop for numBtns (Perfect!)
                 for (let i = 0; i < numBtns.length; i += 1) {
                     let singleNumBtn = numBtns[i];
 
+                    singleNumBtn.style.fontWeight = "bold";
+                    singleNumBtn.style.color = "white";
+
                     if (theme === 0) {
-                        singleNumBtn.style.backgroundColor = "rgb(3, 105, 255)";
-                        singleNumBtn.style.fontWeight = "bold";
-                        singleNumBtn.style.color = "white";
+                        singleNumBtn.style.backgroundColor = "rgb(3, 105, 255)"
                     } else if (theme === 1) {
                         singleNumBtn.style.backgroundColor = "lightgreen";
-                        singleNumBtn.style.fontWeight = "bold";
-                        singleNumBtn.style.color = "white";
                     } else if (theme === 2) {
                         singleNumBtn.style.backgroundColor = "rgb(252, 102, 85)";
-                        singleNumBtn.style.fontWeight = "bold";
-                        singleNumBtn.style.color = "white";
+                    } else if (theme === 3) {
+                        singleNumBtn.style.backgroundColor = "gold";
+                    } else if (theme === 4) {
+                        singleNumBtn.style.backgroundColor = "plum";
                     }
                 }
 
-                // 2. Loop for oprBtns (FIXED variable typos)
                 for (let j = 0; j < oprBtns.length; j++) {
                     let singleOprBtn = oprBtns[j];
 
+                    singleOprBtn.style.fontWeight = "bold"; 
+                    singleOprBtn.style.color = "white"; 
+
                     if (theme === 0) {
                         singleOprBtn.style.backgroundColor = "darkblue";
-                        singleOprBtn.style.fontWeight = "bold";
-                        singleOprBtn.style.color = "white";
                     } else if (theme === 1) {
                         singleOprBtn.style.backgroundColor = "darkgreen";
-                        singleOprBtn.style.fontWeight = "bold"; // Fixed
-                        singleOprBtn.style.color = "white"; // Fixed
                     } else if (theme === 2) {
                         singleOprBtn.style.backgroundColor = "maroon";
-                        singleOprBtn.style.fontWeight = "bold"; // Fixed
-                        singleOprBtn.style.color = "white"; // Fixed
+                    } else if (theme === 3) {
+                        singleOprBtn.style.backgroundColor = "darkorange";
+                    } else if (theme === 4) {
+                        singleOprBtn.style.backgroundColor = "#d85cfa";
                     }
                 }
+                
 
-                // 3. Loop for moreOprBtns (FIXED loop limit and variable typos)
-                for (let l = 0; l < moreOprBtns.length; l++) { // Fixed limit to moreOprBtns.length
+                for (let l = 0; l < moreOprBtns.length; l++) { 
                     let singleMoreOprBtn = moreOprBtns[l];
+
+                    singleMoreOprBtn.style.fontWeight = "bold";
+                    singleMoreOprBtn.style.color = "white";
 
                     if (theme === 0) {
                         singleMoreOprBtn.style.backgroundColor = "rgb(103, 69, 255)";
-                        singleMoreOprBtn.style.fontWeight = "bold";
-                        singleMoreOprBtn.style.color = "white";
                     } else if (theme === 1) {
-                        singleMoreOprBtn.style.backgroundColor = "lightgreen";
-                        singleMoreOprBtn.style.fontWeight = "bold"; // Fixed
-                        singleMoreOprBtn.style.color = "white"; // Fixed
+                        singleMoreOprBtn.style.backgroundColor = "#9bff80";
                     } else if (theme === 2) {
                         singleMoreOprBtn.style.backgroundColor = "rgb(247, 135, 122)";
-                        singleMoreOprBtn.style.fontWeight = "bold"; // Fixed
-                        singleMoreOprBtn.style.color = "white"; // Fixed
+                    } else if (theme === 3) {
+                        singleMoreOprBtn.style.backgroundColor = "darkgoldenrod";
+                    } else if (theme === 4) {
+                        singleMoreOprBtn.style.backgroundColor = "#fa73ff"
                     }
+                }
+            } // end of background changer function
+
+            //object for dark theme
+            const darkTheme = {
+                calcBg: "black",
+                displayBg: "#333232",
+                displayColor: "white",
+                numBtnBg: "#333",
+                oprBtnBg: "rgb(163, 60, 7)",
+                moreBtnBg: "#3a3a3a",
+                bodyBg: "grey"
+            };
+
+            const lightTheme = {
+                calcBg: "#fbf8f8",
+                displayBg: "#d3d2d2",
+                displayColor: "black",
+                numBtnBg: "#f1eded",
+                oprBtnBg: "#ff8a3d",
+                moreBtnBg: "rgb(221, 218, 218)",
+                bodyBg: "white"
+            };
+
+            function applyTheme(theme) {
+                calcEl.style.backgroundColor = theme.calcBg;
+                displayBox.style.backgroundColor = theme.displayBg
+                displayEl.style.color = theme.displayColor;
+                bodyEl.style.backgroundColor = theme.bodyBg
+
+                for (let i = 0; i < numBtns.length; i++) {
+                    numBtns[i].style.backgroundColor = theme.numBtnBg;
+                    numBtns[i].style.color = "white";
+                }
+
+                for (let i = 0; i < oprBtns.length; i++) {
+                    oprBtns[i].style.backgroundColor = theme.oprBtnBg;
+                }
+
+                for (let i = 0; i < moreOprBtns.length; i++) {
+                    moreOprBtns[i].style.backgroundColor = theme.moreBtnBg;
+                    moreOprBtns[i].style.color = "white"
+                }
+                for (let i = 0; i < blackBtns.length; i++) {
+                    blackBtns[i].style.backgroundColor = "rgb(87, 84, 82)";  
+                    blackBtns[i].style.color = "white";
                 }
             }
 
+            function darkMode() {
+                applyTheme(darkTheme);
+                let darkBtn = document.querySelector(".darkmode-btn");
+                darkBtn.textContent = "Light Mode";
+                darkBtn.style.color = "black"
+                darkBtn.style.background = "linear-gradient(to bottom right, white 60%, grey, black)"
+
+            }
         </script>
     </body>
 </html>
