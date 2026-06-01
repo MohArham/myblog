@@ -44,6 +44,7 @@
         </div><!--end of the calc div-->
 
         <script>
+            
             let displayEl = document.querySelector("#num-display");
             let calcEl = document.querySelector(".calc");
             let displayBox = document.querySelector(".display");
@@ -235,9 +236,13 @@
                 displayBg: "#333232",
                 displayColor: "white",
                 numBtnBg: "#333",
+                numBtnColor: "white",
                 oprBtnBg: "rgb(163, 60, 7)",
                 moreBtnBg: "#3a3a3a",
-                bodyBg: "grey"
+                bodyBg: "grey",
+                moreBtnColor: "white",
+                blackBtnBg: "grey",
+                boxShadow: "-5px 10px 70px black"
             };
 
             const lightTheme = {
@@ -246,8 +251,12 @@
                 displayColor: "black",
                 numBtnBg: "#f1eded",
                 oprBtnBg: "#ff8a3d",
+                numBtnColor: "black", 
                 moreBtnBg: "rgb(221, 218, 218)",
-                bodyBg: "white"
+                bodyBg: "white",
+                moreBtnColor: "black",
+                blackBtnBg: "black",
+                boxShadow: "-5px 10px 70px rgb(164, 159, 159)"
             };
 
             function applyTheme(theme) {
@@ -255,10 +264,11 @@
                 displayBox.style.backgroundColor = theme.displayBg
                 displayEl.style.color = theme.displayColor;
                 bodyEl.style.backgroundColor = theme.bodyBg
+                calcEl.style.boxShadow = theme.boxShadow
 
                 for (let i = 0; i < numBtns.length; i++) {
                     numBtns[i].style.backgroundColor = theme.numBtnBg;
-                    numBtns[i].style.color = "white";
+                    numBtns[i].style.color = theme.numBtnColor;
                 }
 
                 for (let i = 0; i < oprBtns.length; i++) {
@@ -267,21 +277,30 @@
 
                 for (let i = 0; i < moreOprBtns.length; i++) {
                     moreOprBtns[i].style.backgroundColor = theme.moreBtnBg;
-                    moreOprBtns[i].style.color = "white"
+                    moreOprBtns[i].style.color = theme.moreBtnColor;
                 }
                 for (let i = 0; i < blackBtns.length; i++) {
-                    blackBtns[i].style.backgroundColor = "rgb(87, 84, 82)";  
+                    blackBtns[i].style.backgroundColor = theme.blackBtnBg;  
                     blackBtns[i].style.color = "white";
                 }
             }
 
             function darkMode() {
-                applyTheme(darkTheme);
                 let darkBtn = document.querySelector(".darkmode-btn");
-                darkBtn.textContent = "Light Mode";
-                darkBtn.style.color = "black"
-                darkBtn.style.background = "linear-gradient(to bottom right, white 60%, grey, black)"
 
+                 if (isDark === false) {
+                    applyTheme(darkTheme);
+                    darkBtn.textContent = "Light Mode";
+                    darkBtn.style.color = "black";
+                    darkBtn.style.background = "linear-gradient(to bottom right, white 60%, grey, black)";
+                    isDark = true;
+                } else {
+                    applyTheme(lightTheme);
+                    darkBtn.textContent = "Dark Mode";
+                    darkBtn.style.color = "white";
+                    darkBtn.style.background = "linear-gradient(to bottom right, black 60%, grey, whitesmoke)";
+                    isDark = false;
+                }
             }
         </script>
     </body>
