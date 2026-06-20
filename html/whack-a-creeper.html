@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Whack a creeper</title>
+        <link rel="stylesheet" href="whack-a-creeper.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Lexend:wght@100..900&family=Oxanium:wght@200..800&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <section id="start" class="screen show">
+            <img class="creeper-face" src="../images/creeper-face.png">
+            <h1>Whack <span id="green-a">a</span> <span id="darkcolor-word">creeper</span></h1>
+            <h3>Click the creepers before they hide!</h3>
+            <button class="start-btn" onclick="switchScreen('game'); startGame()">Start!</button>
+        </section>
+
+        <section id="game" class="screen" hidden>
+
+            <div class="scoreANDtime">
+                <p class="SCORE">🏆Score:<span id="score"></span></p>
+                <p class="TIME">⏱️ Time:<span id="time-nums"></span></p>
+            </div>
+
+            <div class="blocks">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+                <img class="block" src="../images/block.png">
+            </div>
+        </section>
+
+        <section id="end" class="screen" hidden>
+
+        </section>
+
+    <script src="whack-a-creeper.js">
+
+    </script>
+
+    </body>
+</html>
