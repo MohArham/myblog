@@ -111,6 +111,21 @@ input {
     transition: transform 250ms;
 }
 
+.agreement {
+    margin-top: -15px;
+    display: flex;
+    align-items: baseline;
+    
+}
+
+.agreement-checkbox {
+    width: 20px;
+}
+
+.agreement:focus {
+    outline: 5px solid orange;
+}
+
 input:focus {
     transform: scale(1.1);
     transition: transform 250ms;
