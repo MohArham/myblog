@@ -39,7 +39,7 @@ header {
     padding: 10px 20px; /* some space inside */
     background-color: #0ea5e9;
     margin-bottom: 10px;
-    
+    box-shadow: 5px 5px 50px #005982;
 }
 
 
@@ -99,7 +99,7 @@ nav ul {
 }
 
 nav li {
-    margin-right: 20px;     /* spacing between items */
+    margin-right: 12px;  
 }
 
 nav a {

@@ -4,14 +4,86 @@
 
 body {
     margin: 0;
+    font-family:cascadia code, sans-serif;
 }
 
 .wrapper {
     margin:0;
-    font-family:cascadia code, sans-serif;
     text-align: center;
 
 
+}
+/******************/
+/*  Navigation  */
+/*****************/
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0ea5e9;
+    box-shadow: 5px 5px 50px #005982;
+}
+
+header h1 {
+    padding-left: 25px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+nav li {
+    margin-right: 12px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #075985;
+    transform: scale(1);
+    transition: all 250ms;
+    padding: .25em;
+}
+
+nav a:hover {
+    color: darkblue;
+    transform: scale(1.1);
+}
+
+.current-page {
+    border-bottom: 2px solid #075985;
+    padding-bottom: 1px;
+}
+
+.current-page:hover {
+    color: #075985;
+}
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    header h1 {
+        text-align: center;
+        padding-left: 5px;
+    }
 }
 
 
@@ -24,26 +96,20 @@ body {
     background-size: cover;
     background-color: grey;
     color: whitesmoke;
-    padding: 10px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    gap: 1em;
+
     min-height: 50vh;
+    padding: 3em;
 }
 
-.top-text {
-    order: -1;
-    color: lightgreen;
-    font-weight: 400;
-    font-size: 0.825rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.7px;
-    margin: 0;
-    border-top: 5px orange solid;
-}
-
-h1 {
+.heading {
     order: 0;
     font-size: 2.6rem;
     font-weight: 300;
@@ -51,19 +117,25 @@ h1 {
     font-weight: bold;
 }
 
-h1 + p {
+.heading + p {
     color: whitesmoke;
     font-size: .9rem;
     font-weight: 600;
 
 }
 
+
+
 /*************************/
 /* main content section */
 /*************************/
 
 .main-content {
+    display: flex;
+    flex-direction: column;
     padding: 8px;
+    background-color: #e0f2fe;
+
 }
 
 h2 {
@@ -93,6 +165,10 @@ h2 + p {
     width: 80%;
     max-width: 300px;
     margin: 0 auto;
+    background: white;
+    padding: 1.5em;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.15);
 }
 
 input, .btn {
@@ -164,7 +240,7 @@ input:focus {
         display: flex;
     }
     
-    h1 {
+    .heading {
         font-size: 3.5rem;
     }
     
@@ -178,7 +254,7 @@ input:focus {
         width: 50%;
         min-height: 100vh;
     }
-    h1 + p {
+    .heading + p {
         font-size: 1.125rem;
     }
     .main-content {
