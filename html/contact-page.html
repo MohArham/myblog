@@ -11,17 +11,23 @@
     </head>
     <body>
 
-    <header>
-        <h1>Muhammad Arham</h1>
-        <nav>
-            <ul>
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="../index.html">All about me</a></li>
-                <li><a href="projects-page.html">Projects</a></li>
-                <li><a href="contact-page.html" class="current-page">Contact me</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container2 container-nav">
+         <header>
+            <h1>Muhammad Arham</h1>
+
+            <button aria-label="Open navigation" class="open-button">&#9776;</button>
+
+         <nav class="nav">
+            <button aria-label="Close navigation" class="close-button">&times;</button>
+               <ul>
+                  <li><a href="homepage.html">Home</a></li>
+                  <li><a href="../index.html" class="current-page">More about me</a></li>
+                  <li><a href="projects-page.html">Projects</a></li>
+                  <li><a href="contact-page.html">Contact me</a></li>
+               </ul>
+         </nav>
+         </header>
+      </div>
 
     <div class="wrapper">
 
@@ -56,5 +62,7 @@
         </div>
 
         </div>
+
+        <script src="project-page.js"> </script>
     </body>
 </html>

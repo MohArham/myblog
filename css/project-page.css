@@ -113,6 +113,7 @@ nav {
     font-size: 30px;
     transform: translateX(0);
     transition: transform 250ms;
+    z-index: 10;
 }
 
 .open-button {
@@ -160,22 +161,20 @@ nav {
 /*///////////////////////
     PROJECT ITEMS 
 //////////////////////*/
-img {
+.calc-img {
     margin: 0 auto;
     padding: 0;
     border-radius: 7px;
     transition: transform 300ms,  box-shadow 300ms;
     transform: scale(1);
     box-shadow: 0px 0px 0px;
+    width: 250px;
 }
 
-img:hover {
+.calc-img:hover {
     transition: transform 300ms, box-shadow 300ms;
     transform: scale(1.05);
     box-shadow: 5px 5px 20px;
-}
-.calc-img {
-    width: 250px;
 }
 
 /*///////////////////////
@@ -217,20 +216,54 @@ img:hover {
 .html-progress {
     width: 25%;
     height: 100%;
-    background-color: orange;
+    background-color: #ef6b47;
     border-radius: 10px;
 }
 
 .css-progress {
     width: 35%;
     height: 100%;
-    background-color: rgb(0, 121, 154);
+    background-color: #2783c5;
     border-radius: 10px;
 }
 
 .js-progress {
     width: 45%;
     height: 100%;
-    background-color: rgb(66, 66, 66);
+    background-color: #cfb804;
     border-radius: 10px;
+}
+
+@media (min-width: 700px) { 
+    .calc-project {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 10px;
+        
+    }
+    .text-progress-div {
+        transform: translate(0px , 54px);
+    }
+    .calc-img:hover {
+        transition: transform 300ms;
+        transform: scale(1.05);
+        box-shadow: 0px 0px 0px;
+    }
+    .calc-img {
+        height: 400px;
+        object-fit:cover;
+    }
+    .calc-link {
+        background-color: #0ea5e9;
+        padding: 10px;
+        border-radius: 10px;
+        color: lightcyan;
+        font-weight: bold;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .calc-link:hover {
+        text-decoration: underline;
+        
+    }
 }

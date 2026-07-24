@@ -11,17 +11,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
+         <div class="container2 container-nav">
          <header>
             <h1>Muhammad Arham</h1>
-         <nav>
+
+            <button aria-label="Open navigation" class="open-button">&#9776;</button>
+
+         <nav class="nav">
+            <button aria-label="Close navigation" class="close-button">&times;</button>
                <ul>
                   <li><a href="homepage.html" class="current-page">Home</a></li>
                   <li><a href="../index.html">More about me</a></li>
                   <li><a href="projects-page.html">Projects</a></li>
-                  <li><a href="contact-page.html">Contact Page</a></li>
+                  <li><a href="contact-page.html">Contact me</a></li>
                </ul>
          </nav>
-         </header> 
+         </header>
+      </div>
 
          <div class="wrapper wrapper-flex">
             <main role="main">
@@ -122,5 +128,6 @@
                <p>Copyright 2024 Arham</p>  
             </footer>
 
+         <script src="project-page.js"> </script>
     </body>
 </html>
